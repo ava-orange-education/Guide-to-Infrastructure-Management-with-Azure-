@@ -1,0 +1,42 @@
+#CLIcommands:
+
+az account show
+az account set –-Subscription <Sub ID>
+az group create --name 1stgroup --Location eastus     
+az network vnet create --help
+az network vnet create -g 1stgroup -n 1VNET --address-prefix 10.0.0.0/16 --subnet-name MySubnet --subnet-prefixes 10.0.0.0/24
+az network vnet update –help
+az network vnet update -g 1stgroup -n 1VNET --dns-servers 10.0.0.4 10.0.0.5
+$VMs=az vm list --resource-group ADPool
+az vm stop –h
+az vm stop --ids $(az vm list -g MyResourceGroup --query "[].id" -o tsv)
+$VMs
+$VMs=az vm list -g ADPool --query "[].id" -o tsv
+$VMs
+az vm stop --ids $VMs
+az vm deallocate -h
+az vm deallocate --ids $VMs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

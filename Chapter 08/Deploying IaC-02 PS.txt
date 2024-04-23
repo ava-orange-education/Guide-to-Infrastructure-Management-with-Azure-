@@ -1,0 +1,37 @@
+#PowerShell Commands:
+
+Get-AzContext 
+select-AzSubscription -subscription <Sub ID> 
+New-AzResourceGroup -Name 1stgroup -Location eastus
+Get-Help New-AzVirtualNetwork 
+$Subnet = New-AzVirtualNetworkSubnetConfig -Name MySubnet -AddressPrefix "10.0.0.0/24" 
+New-AzVirtualNetwork -Name 1stVNET -ResourceGroupName 1stgroup -Location eastus -AddressPrefix "10.0.0.0/16" -Subnet $Subnet -DnsServer 10.0.1.5,10.0.1.6
+Get-help Set-AzVirtualNetwork 
+$virtualNetwork = New-AzVirtualNetwork -Name 1stVNET -ResourceGroupName 1stgroup -Location eastus -AddressPrefix "10.0.0.0/16" -Subnet $Subnet -DnsServer 10.0.0.4,10.0.0.5
+$VirtualNetwork | Set-AzVirtualNetwork 
+$VMs = Get-AzVM -resourcegroup ADPool
+get-help *Stop*VM* 
+get-help Stop-AzVM
+$VMs | Stop-AzVM -force -verbose
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

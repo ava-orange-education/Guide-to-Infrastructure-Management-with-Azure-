@@ -1,0 +1,2 @@
+az deployment group create --template-file <bicep-file-path> 
+New-AzResourceGroupDeployment -ResourceGroupName <resource-group-name> -TemplateFile <bicep-file-path> 
